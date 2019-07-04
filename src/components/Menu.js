@@ -81,10 +81,6 @@ const SliderMenu = ({ offsetY }) => {
   )
 }
 
-SliderMenu.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
 SliderMenu.defaultProps = {
   siteTitle: ``,
 }

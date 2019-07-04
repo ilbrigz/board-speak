@@ -13,16 +13,6 @@ import Header from "./Header"
 import "./layout.css"
 
 const Layout = ({ children, offsetY }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Header
@@ -52,10 +42,6 @@ const Layout = ({ children, offsetY }) => {
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
