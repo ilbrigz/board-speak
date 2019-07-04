@@ -5,11 +5,7 @@ import "./layout.css"
 const Layout = ({ children, offsetY }) => {
   return (
     <>
-      <Header
-        offsetY={offsetY}
-        color="red"
-        siteTitle={data.site.siteMetadata.title}
-      />
+      <Header offsetY={offsetY} color="red" />
       <div
         style={{
           margin: `0 auto`,

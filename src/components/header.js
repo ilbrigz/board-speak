@@ -1,6 +1,5 @@
 import React, { useCallback, useState, useEffect } from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 const Button = styled.button`
   background-color: #29a25d;
