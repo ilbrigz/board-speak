@@ -9,9 +9,7 @@ import Cards from "../components/Cards"
 
 const IndexPage = () => {
   // const [lastScrollTop, setLastScrollTop] = useState(0)
-  const [bodyOffset, setBodyOffset] = useState(
-    document.body.getBoundingClientRect()
-  )
+  const [bodyOffset, setBodyOffset] = useState(0)
   // const [scrollDirection, setScrollDirection] = useState()
   const listener = e => {
     setBodyOffset(document.body.getBoundingClientRect())
