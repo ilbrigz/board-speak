@@ -64,7 +64,7 @@ export default function Hero() {
         <button>Sign up for beta</button>
       </StyledForm>
       <StyledP>
-        Get Early access and exclusive in app perks, by signing up before our
+        Get early access and exclusive in app perks, by signing up before our
         official launch!
       </StyledP>
       <br></br>
