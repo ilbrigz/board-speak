@@ -54,7 +54,9 @@ export default function Hero() {
   return (
     <StyledHero>
       <SHeader>
-        <Fade>Help team members be accountable & meet deadline</Fade>
+        <Fade duration={6000}>
+          Help team members be accountable & meet deadlines!
+        </Fade>
       </SHeader>
       <StyledP>Let your team get tasks and assignments done on time!</StyledP>
       <StyledForm>
