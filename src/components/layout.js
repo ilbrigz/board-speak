@@ -23,7 +23,7 @@ const Layout = ({ children, offsetY }) => {
           }}
         >
           © {new Date().getFullYear()},{` `}
-          <a href="#">BoarSpeak</a>
+          <a href="#">BoardSpeak</a>
         </footer>
       </div>
     </>
