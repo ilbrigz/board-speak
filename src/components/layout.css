@@ -620,3 +620,13 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+#page-wrap > header{
+  position: fixed;
+  width: 100%;
+  display: flex;
+}
+.bm-item:focus{
+  outline: none
+}
+
