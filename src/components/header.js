@@ -74,7 +74,7 @@ const Header = ({ offsetY }) => {
           </StyledLogo>
         </div>
       </div>
-      <Button onClick={() => setExpand(!expand)}>SIGN UP</Button>
+      <Button>SIGN UP</Button>
     </SHeader>
   )
 }

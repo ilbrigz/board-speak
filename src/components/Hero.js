@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import MobileSvg from "../images/mobile-marketing.js"
 import Fade from "react-reveal"
+
 const SHeader = styled.h1`
   text-align: center;
   margin-top: 3rem;
