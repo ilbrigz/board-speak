@@ -49,7 +49,7 @@ const StyledImage = styled.div`
     min-width: 500px;
   }
 `
-export default function Hero() {
+const Hero = React.memo(() => {
   const springProps = useSpring({
     config: {
       duration: 600,
@@ -57,6 +57,7 @@ export default function Hero() {
     opacity: 1,
     from: { opacity: 0 },
   })
+
   return (
     <StyledHero>
       <SHeader style={springProps}>
@@ -77,4 +78,5 @@ export default function Hero() {
       </StyledImage>
     </StyledHero>
   )
-}
+})
+export default Hero

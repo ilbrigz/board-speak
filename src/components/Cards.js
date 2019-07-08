@@ -10,7 +10,7 @@ const StyledCards = styled.div`
   justify-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   margin-top: 3rem;
   @media (min-width: 570px) {
     display: grid;
@@ -44,7 +44,8 @@ const cards = [
       "Instantly delegate the task by turning conversations into actions",
   },
 ]
-export default function Cards() {
+const Cards = React.memo(() => {
+  console.log("rendered")
   return (
     <StyledCards>
       {cards.map((item, index) => (
@@ -57,4 +58,6 @@ export default function Cards() {
       ))}
     </StyledCards>
   )
-}
+})
+
+export default Cards

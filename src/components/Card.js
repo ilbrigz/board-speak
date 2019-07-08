@@ -34,7 +34,6 @@ export default function Card({ image, title, description }) {
     opacity: inView ? 1 : 0,
     from: { opacity: 0 },
   })
-  console.log(entry)
   return (
     <StyledCard ref={ref} style={springProps}>
       <StyledImage src={image} />

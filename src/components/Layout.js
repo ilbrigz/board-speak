@@ -22,8 +22,9 @@ const Layout = ({ children, offsetY }) => {
             justifyContent: "center",
           }}
         >
-          © {new Date().getFullYear()},{` `}
-          <a href="#">BoardSpeak</a>
+          <p>
+            © {new Date().getFullYear()}, <a href="#"> BoardSpeak</a>
+          </p>
         </footer>
       </div>
     </>
