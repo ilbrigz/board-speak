@@ -1,7 +1,6 @@
 import React from "react"
 import Card from "./Card"
 import styled from "styled-components"
-import Fade from "react-reveal"
 import Advertising from "../images/megaphone.png"
 import List from "../images/list.png"
 import Phone from "../images/phone-message.png"
@@ -48,16 +47,14 @@ const cards = [
 export default function Cards() {
   return (
     <StyledCards>
-      <Fade>
-        {cards.map((item, index) => (
-          <Card
-            key={index}
-            title={item.title}
-            image={item.image}
-            description={item.description}
-          />
-        ))}
-      </Fade>
+      {cards.map((item, index) => (
+        <Card
+          key={index}
+          title={item.title}
+          image={item.image}
+          description={item.description}
+        />
+      ))}
     </StyledCards>
   )
 }

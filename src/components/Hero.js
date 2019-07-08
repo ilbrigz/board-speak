@@ -2,9 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import MobileSvg from "../images/mobile-marketing.js"
-import Fade from "react-reveal"
-
-const SHeader = styled.h1`
+import { useSpring, animated } from "react-spring"
+const SHeader = styled(animated.h1)`
   text-align: center;
   margin-top: 3rem;
   color: #316aaf;
@@ -51,12 +50,17 @@ const StyledImage = styled.div`
   }
 `
 export default function Hero() {
+  const springProps = useSpring({
+    config: {
+      duration: 600,
+    },
+    opacity: 1,
+    from: { opacity: 0 },
+  })
   return (
     <StyledHero>
-      <SHeader>
-        <Fade duration={6000}>
-          Help team members be accountable & meet deadlines!
-        </Fade>
+      <SHeader style={springProps}>
+        Help team members be accountable & meet deadlines!
       </SHeader>
       <StyledP>Let your team get tasks and assignments done on time!</StyledP>
       <StyledForm>

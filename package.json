@@ -21,7 +21,8 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-inlinesvg": "^0.8.4",
-    "react-reveal": "^1.2.2",
+    "react-intersection-observer": "^8.23.0",
+    "react-spring": "^8.0.27",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
@@ -39,7 +40,6 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
-
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }

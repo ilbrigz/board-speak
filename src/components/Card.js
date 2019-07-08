@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import SvgImage from "../images/mobile-marketing"
-import Zoom from "react-reveal"
+import { useInView } from "react-intersection-observer"
+import { useSpring, animated } from "react-spring"
 
-const StyledCard = styled.div`
+const StyledCard = styled(animated.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,8 +23,20 @@ const StyledImage = styled.img`
 `
 
 export default function Card({ image, title, description }) {
+  const [ref, inView, entry] = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  })
+  const springProps = useSpring({
+    config: {
+      duration: 1000,
+    },
+    opacity: inView ? 1 : 0,
+    from: { opacity: 0 },
+  })
+  console.log(entry)
   return (
-    <StyledCard>
+    <StyledCard ref={ref} style={springProps}>
       <StyledImage src={image} />
       <CardBody>
         <h3>{title}</h3>
