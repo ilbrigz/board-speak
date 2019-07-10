@@ -13,6 +13,7 @@ const StyledCards = styled.div`
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 3rem;
   }
 `
 
