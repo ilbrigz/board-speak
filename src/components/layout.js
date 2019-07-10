@@ -2,10 +2,10 @@ import React from "react"
 import Header from "./Header"
 import "./layout.css"
 
-const Layout = ({ children, offsetY }) => {
+const Layout = ({ children, inputRef, offsetY }) => {
   return (
     <>
-      <Header offsetY={offsetY} color="red" />
+      <Header offsetY={offsetY} color="red" inputRef={inputRef} />
       <div
         style={{
           margin: `0 auto`,
@@ -14,7 +14,9 @@ const Layout = ({ children, offsetY }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <main style={{ display: "flex", flexDirection: "column" }}>
+          {children}
+        </main>
         <footer
           style={{
             marginTop: "3rem",
@@ -23,7 +25,11 @@ const Layout = ({ children, offsetY }) => {
           }}
         >
           <p>
-            © {new Date().getFullYear()}, <a href="#"> BoardSpeak</a>
+            © {new Date().getFullYear()},{" "}
+            <a href="#" style={{ color: "black" }}>
+              {" "}
+              BoardSpeak
+            </a>
           </p>
         </footer>
       </div>

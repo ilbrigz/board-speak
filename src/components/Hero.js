@@ -1,7 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { navigateTo } from "gatsby"
 import styled from "styled-components"
-import MobileSvg from "../images/mobile-marketing.js"
 import { useSpring, animated } from "react-spring"
 const SHeader = styled(animated.h1)`
   text-align: center;
@@ -41,6 +40,9 @@ const StyledHero = styled.div`
   align-items: center;
   padding-top: 8rem;
   padding-bottom: 5rem;
+  @media (max-width: 570px) {
+    padding-bottom: 0;
+  }
 `
 const StyledImage = styled.div`
   @media (min-width: 570px) {
@@ -49,34 +51,46 @@ const StyledImage = styled.div`
     min-width: 500px;
   }
 `
-const Hero = React.memo(() => {
-  const springProps = useSpring({
-    config: {
-      duration: 600,
-    },
-    opacity: 1,
-    from: { opacity: 0 },
-  })
+const Hero = React.memo(
+  ({
+    pageSubtitle,
+    pageTitle,
+    location,
+    heroSubtitle,
+    inputRef,
+    HeroImage,
+  }) => {
+    const springProps = useSpring({
+      config: {
+        duration: 600,
+      },
+      opacity: 1,
+      from: { opacity: 0 },
+    })
+    const signup = () => {
+      navigateTo("https://beta.boardspeak.com/Preregistration")
+    }
+    return (
+      <StyledHero>
+        <SHeader style={springProps}>{pageTitle}</SHeader>
+        <StyledP>{pageSubtitle}</StyledP>
+        <StyledForm
+          onSubmit={event => {
+            event.preventDefault()
 
-  return (
-    <StyledHero>
-      <SHeader style={springProps}>
-        Help team members be accountable & meet deadlines!
-      </SHeader>
-      <StyledP>Let your team get tasks and assignments done on time!</StyledP>
-      <StyledForm>
-        <input type="email" placeholder="Email Address" />
-        <button>Sign up for beta</button>
-      </StyledForm>
-      <StyledP>
-        Get early access and exclusive in app perks, by signing up before our
-        official launch!
-      </StyledP>
-      <br></br>
-      <StyledImage>
-        <MobileSvg />
-      </StyledImage>
-    </StyledHero>
-  )
-})
+            window.location.href = "https://beta.boardspeak.com/Preregistration"
+          }}
+        >
+          <input ref={inputRef} type="email" placeholder="Email Address" />
+          <button style={{ cursor: "pointer" }} type="submit">
+            Sign up for beta
+          </button>
+        </StyledForm>
+        <StyledP>{heroSubtitle}</StyledP>
+        <br></br>
+        <StyledImage>{<HeroImage />}</StyledImage>
+      </StyledHero>
+    )
+  }
+)
 export default Hero

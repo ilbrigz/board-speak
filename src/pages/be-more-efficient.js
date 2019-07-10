@@ -4,45 +4,43 @@ import SEO from "../components/seo"
 import Menu from "../components/Menu"
 import Hero from "../components/Hero"
 import Cards from "../components/Cards"
-import MobileSvg from "../images/mobile-marketing.js"
-import Advertising from "../images/megaphone.png"
-import List from "../images/list.png"
+import Notification from "../images/notification.png"
+import Puzzle from "../images/puzzle.png"
 import { Link } from "gatsby"
-import Phone from "../images/phone-message.png"
-import Schedule from "../images/schedule.png"
+import EfficientHero from "../images/efficientHero.js"
+import Tag from "../images/tag.png"
+import Home from "../images/home.png"
 import { endianness } from "os"
 
-const pageTitle = "Help team members be accountable & meet deadlines"
-const pageSubtitle = "let your team get tasks and assignments done on time!"
+const pageTitle = "Spend less time managing information. Get more things done!"
+const pageSubtitle = "Replace chaotic group chats & overwhelming email threads!"
 const heroSubtitle =
-  "Get access and exclusive in app perks, by signing up before our official launch!"
+  "Studies say professionals throw important information 90% of the time without reading it!"
 const cards = [
   {
-    image: Schedule,
-    title: "Schedule Manager",
+    image: Home,
+    title: "Customizable Dashboard Display",
     description:
-      "Set an order of priority for assigned tasks with notifications and due dates",
+      "a cloud-based visual dashboard you can customize depending on task and goal priority",
   },
   {
-    image: Phone,
-    title: "Auto-SMS Features",
-    description: "Follow up on deliverable status with feedback tracking",
+    image: Tag,
+    title: "Multiple Search Filters",
+    description: "Quickly find what you are looking for",
   },
   {
-    image: Advertising,
-    title: "Board of Fame Employee Recognition",
-    description:
-      "Send morale skyrocketing by highlighting performance showing progress with levels of badges",
+    image: Notification,
+    title: "Selective Notification",
+    description: "Choose topics you care about and throw away clutter & noise",
   },
   {
-    image: List,
-    title: "Easy-to-use Task Manager",
-    description:
-      "Instantly delegate the task by turning conversations into actions",
+    image: Puzzle,
+    title: "Plug-ins & Integration Capabilities",
+    description: "Streamline your workflow by including the apps you want",
   },
 ]
 
-const IndexPage = props => {
+const Efficient = props => {
   const [bodyOffset, setBodyOffset] = useState(0)
   const inputRef = useRef(0)
   const listener = e => {
@@ -61,7 +59,7 @@ const IndexPage = props => {
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
           <SEO title="Home" />
           <Hero
-            HeroImage={MobileSvg}
+            HeroImage={EfficientHero}
             inputRef={inputRef}
             location={props.location}
             pageSubtitle={pageSubtitle}
@@ -70,7 +68,7 @@ const IndexPage = props => {
           />
           <Cards cards={cards} />
           <Link
-            to="/be-more-efficient"
+            to="/engage-with-customers"
             style={{
               color: "#316aaf",
               alignSelf: "flex-end",
@@ -79,11 +77,11 @@ const IndexPage = props => {
               backgroundColor: "#FFD400",
             }}
           >
-            Become More Efficient &rarr;
+            Engage with Customers &rarr;
           </Link>
         </Layout>
       </div>
     </>
   )
 }
-export default IndexPage
+export default Efficient

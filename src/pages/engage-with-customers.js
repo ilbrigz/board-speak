@@ -4,45 +4,46 @@ import SEO from "../components/seo"
 import Menu from "../components/Menu"
 import Hero from "../components/Hero"
 import Cards from "../components/Cards"
-import MobileSvg from "../images/mobile-marketing.js"
-import Advertising from "../images/megaphone.png"
-import List from "../images/list.png"
+import SMS from "../images/sms.png"
+import Shopping from "../images/shopping.png"
 import { Link } from "gatsby"
-import Phone from "../images/phone-message.png"
-import Schedule from "../images/schedule.png"
+import EngageHero from "../images/engageHero.js"
+import Chat from "../images/chat.png"
+import Id from "../images/id-card.png"
 import { endianness } from "os"
 
-const pageTitle = "Help team members be accountable & meet deadlines"
-const pageSubtitle = "let your team get tasks and assignments done on time!"
+const pageTitle =
+  "Engage & retain customers with positive sentiment towards your brand"
+const pageSubtitle = "Promote your brand and sell your products"
 const heroSubtitle =
-  "Get access and exclusive in app perks, by signing up before our official launch!"
+  "Get early access and exclusive in app perks, by signing up before our official launch!"
 const cards = [
   {
-    image: Schedule,
-    title: "Schedule Manager",
+    image: Id,
+    title: "White Labeling Social Collaboration",
     description:
-      "Set an order of priority for assigned tasks with notifications and due dates",
+      "Build brand visibility and extend customer react with visual & interactive bulleting board",
   },
   {
-    image: Phone,
-    title: "Auto-SMS Features",
-    description: "Follow up on deliverable status with feedback tracking",
+    image: Chat,
+    title: "AI Chatbots",
+    description:
+      "Automate customer service to immediately reply to customer queries even when everyone is busy",
   },
   {
-    image: Advertising,
-    title: "Board of Fame Employee Recognition",
+    image: SMS,
+    title: "Push Promo Notification",
     description:
-      "Send morale skyrocketing by highlighting performance showing progress with levels of badges",
+      "SMS automation is an option for those who are not connected to the internet",
   },
   {
-    image: List,
-    title: "Easy-to-use Task Manager",
-    description:
-      "Instantly delegate the task by turning conversations into actions",
+    image: Shopping,
+    title: "Ecommerce",
+    description: "Boost sales with targeted audience in Community Marketplace",
   },
 ]
 
-const IndexPage = props => {
+const Engage = props => {
   const [bodyOffset, setBodyOffset] = useState(0)
   const inputRef = useRef(0)
   const listener = e => {
@@ -61,7 +62,7 @@ const IndexPage = props => {
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
           <SEO title="Home" />
           <Hero
-            HeroImage={MobileSvg}
+            HeroImage={EngageHero}
             inputRef={inputRef}
             location={props.location}
             pageSubtitle={pageSubtitle}
@@ -69,8 +70,8 @@ const IndexPage = props => {
             pageTitle={pageTitle}
           />
           <Cards cards={cards} />
-          <Link
-            to="/be-more-efficient"
+          <button
+            onClick={() => inputRef.current.focus()}
             style={{
               color: "#316aaf",
               alignSelf: "flex-end",
@@ -79,11 +80,11 @@ const IndexPage = props => {
               backgroundColor: "#FFD400",
             }}
           >
-            Become More Efficient &rarr;
-          </Link>
+            Sign Up for Beta Now &rarr;
+          </button>
         </Layout>
       </div>
     </>
   )
 }
-export default IndexPage
+export default Engage

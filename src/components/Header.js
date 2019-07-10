@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 const Button = styled.button`
   background-color: #29a25d;
   margin-left: auto;
+  cursor: pointer;
   color: #fff;
   margin-right: 70px;
   border: none;
   border-radius: 1rem;
   font-size: 0.8rem;
   padding: 0.5rem;
+  &:focus {
+    outline: none;
+  }
   @media (min-width: 366px) {
     padding: 1rem;
   }
@@ -36,7 +40,7 @@ const StyledLogo = styled.h1`
   @media (max-width: 768px) {
   }
 `
-const Header = ({ offsetY }) => {
+const Header = ({ offsetY, inputRef }) => {
   const [expand, setExpand] = useState(false)
   useEffect(() => {
     if (offsetY < -60) {
@@ -45,7 +49,9 @@ const Header = ({ offsetY }) => {
       setExpand(false)
     }
   }, [offsetY])
-
+  const focusInput = () => {
+    inputRef.current.focus()
+  }
   return (
     <SHeader expanded={expand}>
       <div>
@@ -74,7 +80,7 @@ const Header = ({ offsetY }) => {
           </StyledLogo>
         </div>
       </div>
-      <Button>SIGN UP</Button>
+      <Button onClick={focusInput}>SIGN UP</Button>
     </SHeader>
   )
 }
