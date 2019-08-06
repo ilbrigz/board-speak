@@ -92,16 +92,17 @@ const Hero = React.memo(
         <StyledP>{pageSubtitle}</StyledP>
         <StyledForm onSubmit={submitEmail}>
           <input ref={inputRef} type="email" placeholder="Email Address" />
-          {/* <p
+          <p
             style={{
               textAlign: "center",
               marginBottom: 0,
               color: "#D8000C",
               fontSize: ".8rem",
+              opacity: 0.8,
             }}
           >
             Please provide a valid input
-          </p> */}
+          </p>
           <button style={{ cursor: "pointer" }} type="submit">
             Sign up for beta
           </button>
