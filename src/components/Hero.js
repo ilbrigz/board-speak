@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { navigateTo } from "gatsby"
+import axios from "axios"
 import styled from "styled-components"
 import { useSpring, animated } from "react-spring"
 const SHeader = styled(animated.h1)`
@@ -67,21 +68,40 @@ const Hero = React.memo(
       opacity: 1,
       from: { opacity: 0 },
     })
-    const signup = () => {
-      navigateTo("https://beta.boardspeak.com/Preregistration")
+    const submitEmail = event => {
+      event.preventDefault()
+
+      if (!inputRef.current.value) {
+        return
+      }
+      axios
+        .post("https://boardspeak-emaillist-bzykahvdgd.now.sh/api/email-list", {
+          email: inputRef.current.value,
+        })
+        .then(res => {
+          if (res.data.emailAdded) {
+            window.location.href = "https://beta.boardspeak.com/Preregistration"
+          } else {
+            console.log(false)
+          }
+        })
     }
     return (
       <StyledHero>
         <SHeader style={springProps}>{pageTitle}</SHeader>
         <StyledP>{pageSubtitle}</StyledP>
-        <StyledForm
-          onSubmit={event => {
-            event.preventDefault()
-
-            window.location.href = "https://beta.boardspeak.com/Preregistration"
-          }}
-        >
+        <StyledForm onSubmit={submitEmail}>
           <input ref={inputRef} type="email" placeholder="Email Address" />
+          {/* <p
+            style={{
+              textAlign: "center",
+              marginBottom: 0,
+              color: "#D8000C",
+              fontSize: ".8rem",
+            }}
+          >
+            Please provide a valid input
+          </p> */}
           <button style={{ cursor: "pointer" }} type="submit">
             Sign up for beta
           </button>
