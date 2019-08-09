@@ -3,6 +3,12 @@ import { navigateTo } from "gatsby"
 import axios from "axios"
 import styled from "styled-components"
 import { useSpring, animated } from "react-spring"
+
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
+}
+
 const SHeader = styled(animated.h1)`
   text-align: center;
   margin-top: 3rem;
@@ -61,6 +67,8 @@ const Hero = React.memo(
     inputRef,
     HeroImage,
   }) => {
+    const [msg, setMsg] = useState({ type: "", msg: "" })
+
     const springProps = useSpring({
       config: {
         duration: 600,
@@ -74,15 +82,36 @@ const Hero = React.memo(
       if (!inputRef.current.value) {
         return
       }
+      const emailValid = validateEmail(inputRef.current.value)
+      if(!emailValid) {
+        setMsg({ type: "ERR", msg: "Please send a valid email." })
+        return;
+      }
+      setMsg({ type: "SENDING", msg: "Sending to the database..." })
+
       axios
         .post("https://boardspeak-emaillist-bzykahvdgd.now.sh/api/email-list", {
           email: inputRef.current.value,
         })
         .then(res => {
+          console.log(res.data)
           if (res.data.emailAdded) {
+            setMsg({
+              type: "SUCCESS",
+              msg: "You will be forwarded to the registration form",
+            })
             window.location.href = "https://beta.boardspeak.com/Preregistration"
-          } else {
-            console.log(false)
+          }
+        })
+        .catch(error => {
+          console.log(error.response.data)
+          switch (error.response.data.error.code) {
+            case "ER_DUP_ENTRY":
+              setMsg({ type: "ER_DUP_ENTRY", msg: "Email already in use. Please try another email" })
+              break
+            default:
+              setMsg({ type: "", msg: "" })
+              break
           }
         })
     }
@@ -96,12 +125,17 @@ const Hero = React.memo(
             style={{
               textAlign: "center",
               marginBottom: 0,
-              color: "#D8000C",
+              color:
+                msg.type !== "SENDING"
+                  ? msg.type === "SUCCESS"
+                    ? "#29a25d"
+                    : "#D8000C"
+                  : "#316aaf",
               fontSize: ".8rem",
               opacity: 0.8,
             }}
           >
-            Please provide a valid input
+            {msg.msg}
           </p>
           <button style={{ cursor: "pointer" }} type="submit">
             Sign up for beta
