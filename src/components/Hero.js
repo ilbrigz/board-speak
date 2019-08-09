@@ -107,7 +107,7 @@ const Hero = React.memo(
           console.log(error.response.data)
           switch (error.response.data.error.code) {
             case "ER_DUP_ENTRY":
-              setMsg({ type: "ER_DUP_ENTRY", msg: "Email already in use. Please try another email" })
+              setMsg({ type: "ER_DUP_ENTRY", msg: "Email already in use. Please try another." })
               break
             default:
               setMsg({ type: "", msg: "" })
