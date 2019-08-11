@@ -12,6 +12,7 @@ const CardBody = styled.div`
   align-items: center;
   p,
   h3 {
+    color: rgb(92, 92, 94);
     text-align: center;
   }
 `

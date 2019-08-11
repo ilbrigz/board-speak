@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { slide as Menu } from "react-burger-menu"
+import styled from "styled-components"
 
 const style = hasScrolled => ({
   bmBurgerButton: {
@@ -9,7 +10,7 @@ const style = hasScrolled => ({
     width: "36px",
     height: "30px",
     right: "15px",
-    top: hasScrolled ? "24px" : "28px",
+    top: hasScrolled ? "28px" : "34px",
   },
   bmBurgerBars: {
     background: hasScrolled ? "#eeeeee" : "#69696b",
@@ -65,17 +66,13 @@ const SliderMenu = ({ offsetY }) => {
   }, [offsetY])
   return (
     <Menu right styles={style(expanded)} pageWrapId={"page-wrap"}>
-      <a id="home" className="menu-item" href="#">
-        Home
-      </a>
-      <a id="about" className="menu-item" href="#">
-        About
-      </a>
-      <a id="contact" className="menu-item" href="#">
-        Contact
-      </a>
-      <a className="menu-item--small" href="#">
-        Settings
+      <a
+        id="home"
+        className="menu-item"
+        href="#"
+        style={{ textDecoration: "none" }}
+      >
+        How It Works
       </a>
     </Menu>
   )

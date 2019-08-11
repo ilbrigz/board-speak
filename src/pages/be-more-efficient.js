@@ -10,7 +10,6 @@ import { Link } from "gatsby"
 import EfficientHero from "../images/efficientHero.js"
 import Tag from "../images/tag.png"
 import Home from "../images/home.png"
-import { endianness } from "os"
 
 const pageTitle = "Spend less time managing information. Get more things done!"
 const pageSubtitle = "Replace chaotic group chats & overwhelming email threads!"
@@ -57,7 +56,7 @@ const Efficient = props => {
       <Menu offsetY={bodyOffset.y} />
       <div id="page-wrap">
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
-          <SEO title="Home" />
+          <SEO title="Manage time" />
           <Hero
             HeroImage={EfficientHero}
             inputRef={inputRef}

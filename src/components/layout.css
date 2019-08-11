@@ -110,7 +110,8 @@ input,
 optgroup,
 select,
 textarea {
-  font: inherit;
+  font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
 }
 optgroup {
@@ -621,12 +622,17 @@ pre tt:after {
   }
 }
 
-#page-wrap > header{
+#page-wrap > header {
   position: fixed;
   width: 100%;
   display: flex;
 }
-.bm-item:focus{
-  outline: none
+.bm-item:focus {
+  outline: none;
 }
 
+a,
+.serif {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}

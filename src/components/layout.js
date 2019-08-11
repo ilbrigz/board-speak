@@ -24,9 +24,12 @@ const Layout = ({ children, inputRef, offsetY }) => {
             justifyContent: "center",
           }}
         >
-          <p>
+          <p className="serif" style={{ color: "rgb(92, 92, 94)" }}>
             © {new Date().getFullYear()},{" "}
-            <a href="#" style={{ color: "black" }}>
+            <a
+              href="#"
+              style={{ color: "rgb(92, 92, 94)", textDecoration: "none" }}
+            >
               {" "}
               BoardSpeak
             </a>

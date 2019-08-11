@@ -40,6 +40,9 @@ const StyledForm = styled.form`
     color: #fff;
     text-transform: uppercase;
   }
+  input {
+    font-size: 1rem;
+  }
 `
 const StyledHero = styled.div`
   display: flex;
@@ -83,9 +86,9 @@ const Hero = React.memo(
         return
       }
       const emailValid = validateEmail(inputRef.current.value)
-      if(!emailValid) {
+      if (!emailValid) {
         setMsg({ type: "ERR", msg: "Please send a valid email." })
-        return;
+        return
       }
       setMsg({ type: "SENDING", msg: "Sending to the database..." })
 
@@ -107,7 +110,10 @@ const Hero = React.memo(
           console.log(error.response.data)
           switch (error.response.data.error.code) {
             case "ER_DUP_ENTRY":
-              setMsg({ type: "ER_DUP_ENTRY", msg: "Email already in use. Please try another." })
+              setMsg({
+                type: "ER_DUP_ENTRY",
+                msg: "Email already in use. Please try another.",
+              })
               break
             default:
               setMsg({ type: "", msg: "" })

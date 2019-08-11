@@ -60,7 +60,7 @@ const Engage = props => {
       <Menu offsetY={bodyOffset.y} />
       <div id="page-wrap">
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
-          <SEO title="Home" />
+          <SEO title="Retain customers" />
           <Hero
             HeroImage={EngageHero}
             inputRef={inputRef}

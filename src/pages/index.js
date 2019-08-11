@@ -59,7 +59,7 @@ const IndexPage = props => {
       <Menu offsetY={bodyOffset.y} />
       <div id="page-wrap">
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
-          <SEO title="Home" />
+          <SEO title="All communications in one place" />
           <Hero
             HeroImage={MobileSvg}
             inputRef={inputRef}
