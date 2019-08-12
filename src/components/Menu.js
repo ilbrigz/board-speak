@@ -2,6 +2,13 @@ import React, { memo, useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { slide as Menu } from "react-burger-menu"
 import styled from "styled-components"
+import {
+  FaCogs,
+  FaHome,
+  FaHandshake,
+  FaUserClock,
+  FaCalendarCheck,
+} from "react-icons/fa"
 
 const style = hasScrolled => ({
   bmBurgerButton: {
@@ -54,8 +61,24 @@ const style = hasScrolled => ({
   },
 })
 const StyledLink = styled(Link)`
+  display: flex !important;
+  text-decoration: none;
+  flex-direction: row;
+  align-items: center;
+  svg {
+    margin-right: 0.5rem;
+  }
   &:hover {
     color: #29a25d !important;
+  }
+`
+const SubMenu = styled.div`
+  padding-left: 1.6rem;
+  margin-top: 0 !important;
+  a {
+    margin-top: 1rem;
+    color: white;
+    font-size: 0.8rem;
   }
 `
 const SliderMenu = props => {
@@ -68,41 +91,74 @@ const SliderMenu = props => {
       setExpanded(false)
     }
   }, [props.offsetY])
+  const { location } = props
   return (
-    <Menu right styles={style(expanded)} pageWrapId={"page-wrap"}>
+    <Menu noOverlay right styles={style(expanded)} pageWrapId={"page-wrap"}>
       <StyledLink
         id="home"
         className="menu-item"
         to="#"
         style={{
           textDecoration: "none",
-          color: checkLocation("/") ? "#29a25d" : "#ffffff",
+          color: checkLocation("home", location) ? "#29a25d" : "#ffffff",
         }}
       >
+        <FaHome />
         Home
       </StyledLink>
+      <SubMenu>
+        <StyledLink
+          to="/"
+          style={{
+            color: checkLocation("/", location) ? "#29a25d" : "#ffffff",
+          }}
+        >
+          <FaCalendarCheck /> Meet Deadlines
+        </StyledLink>
+        <StyledLink
+          to="/be-more-efficient"
+          style={{
+            color: checkLocation("/be-more-efficient", location)
+              ? "#29a25d"
+              : "#ffffff",
+          }}
+        >
+          <FaUserClock />
+          Manage Time
+        </StyledLink>
+        <StyledLink
+          to="/engage-with-customers"
+          style={{
+            color: checkLocation("/engage-with-customers", location)
+              ? "#29a25d"
+              : "#ffffff",
+          }}
+        >
+          <FaHandshake /> Retain Customers
+        </StyledLink>
+      </SubMenu>
       <StyledLink
         id="home"
         className="menu-item"
         to="#"
         style={{ textDecoration: "none" }}
       >
+        <FaCogs />
         How It Works
       </StyledLink>
     </Menu>
   )
 }
-function checkLocation(location) {
-  let highlight
-  switch (location) {
-    case "/test":
-      break
-
-    default:
-      highlight = true
-      break
+function checkLocation(location, locationProps) {
+  if (
+    location === "home" &&
+    (locationProps === "/engage-with-customers" ||
+      locationProps === "/be-more-efficient" ||
+      locationProps === "/")
+  ) {
+    return true
   }
-  return highlight
+  return location === locationProps
 }
 
 SliderMenu.defaultProps = {
