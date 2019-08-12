@@ -53,7 +53,7 @@ const Efficient = props => {
   }, [])
   return (
     <>
-      <Menu offsetY={bodyOffset.y} />
+      <Menu offsetY={bodyOffset.y} location={props.location.pathname} />
       <div id="page-wrap">
         <Layout inputRef={inputRef} offsetY={bodyOffset.y}>
           <SEO title="Manage time" />

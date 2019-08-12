@@ -1,6 +1,5 @@
+import React, { memo, useState, useEffect } from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
 import { slide as Menu } from "react-burger-menu"
 import styled from "styled-components"
 
@@ -54,28 +53,56 @@ const style = hasScrolled => ({
     background: "rgba(0, 0, 0, 0.3)",
   },
 })
-
-const SliderMenu = ({ offsetY }) => {
+const StyledLink = styled(Link)`
+  &:hover {
+    color: #29a25d !important;
+  }
+`
+const SliderMenu = props => {
   const [expanded, setExpanded] = useState(false)
   useEffect(() => {
-    if (offsetY < -60) {
+    console.log(expanded)
+    if (props.offsetY < -60 && expanded === false) {
       setExpanded(true)
-    } else if (offsetY >= -60 && expanded !== false) {
+    } else if (props.offsetY >= -60 && expanded === true) {
       setExpanded(false)
     }
-  }, [offsetY])
+  }, [props.offsetY])
   return (
     <Menu right styles={style(expanded)} pageWrapId={"page-wrap"}>
-      <a
+      <StyledLink
         id="home"
         className="menu-item"
-        href="#"
+        to="#"
+        style={{
+          textDecoration: "none",
+          color: checkLocation("/") ? "#29a25d" : "#ffffff",
+        }}
+      >
+        Home
+      </StyledLink>
+      <StyledLink
+        id="home"
+        className="menu-item"
+        to="#"
         style={{ textDecoration: "none" }}
       >
         How It Works
-      </a>
+      </StyledLink>
     </Menu>
   )
+}
+function checkLocation(location) {
+  let highlight
+  switch (location) {
+    case "/test":
+      break
+
+    default:
+      highlight = true
+      break
+  }
+  return highlight
 }
 
 SliderMenu.defaultProps = {

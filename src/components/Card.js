@@ -24,7 +24,7 @@ const StyledImage = styled.img`
 `
 
 export default function Card({ image, title, description }) {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     threshold: 1,
     triggerOnce: true,
   })

@@ -16,9 +16,9 @@ const EfficientHero = ({ width }) => (
         y2="249"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-        <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-        <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+        <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+        <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+        <stop offset="1" stopColor="gray" stopOpacity="0.1" />
       </linearGradient>
       <linearGradient
         id="9c7f1c1e-55bc-40cd-85e2-0f597ed8a8ed"
@@ -542,8 +542,8 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#535461"
-      stroke-miterlimit="10"
-      stroke-width="2"
+      strokeMiterlimit="10"
+      strokeWidth="2"
     />
     <path
       d="M442,517.18c0,6.06-11,23.63-11,23.63s-11-17.57-11-23.63a11,11,0,1,1,21.94,0Z"
@@ -627,8 +627,8 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#535461"
-      stroke-miterlimit="10"
-      stroke-width="2"
+      strokeMiterlimit="10"
+      strokeWidth="2"
     />
     <path
       d="M736.62,517.88c0,6.06-11,23.63-11,23.63s-11-17.57-11-23.63a11,11,0,0,1,21.94,0Z"
@@ -724,7 +724,7 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M181,623.26c0,6.62-4.86,12-4.86,12s-4.86-5.37-4.86-12,4.86-12,4.86-12S181,616.64,181,623.26Z"
@@ -736,7 +736,7 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M179.67,623.26c0,6.62,4.86,12,4.86,12s4.86-5.37,4.86-12-4.86-12-4.86-12S179.67,616.64,179.67,623.26Z"
@@ -753,7 +753,7 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M197.17,623.26c0,6.62-4.86,12-4.86,12s-4.86-5.37-4.86-12,4.86-12,4.86-12S197.17,616.64,197.17,623.26Z"
@@ -790,7 +790,7 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M195.87,623.26c0,6.62,4.86,12,4.86,12s4.86-5.37,4.86-12-4.86-12-4.86-12S195.87,616.64,195.87,623.26Z"
@@ -822,21 +822,21 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M184.77,666.86s-10.53-16.6-25.32-17"
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <path
       d="M183.4,690.56s10.53-16.6,25.32-17"
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <circle cx="92.71" cy="540.56" r="2.73" fill="#0f67d3" />
     <circle cx="34.61" cy="530.76" r="2.73" fill="#0f67d3" />
@@ -845,7 +845,7 @@ const EfficientHero = ({ width }) => (
       transform="translate(-125.1 -119.24)"
       fill="none"
       stroke="#0f67d3"
-      stroke-miterlimit="10"
+      strokeMiterlimit="10"
     />
     <circle cx="40.99" cy="559.92" r="2.73" fill="#0f67d3" />
     <circle cx="83.82" cy="554.46" r="2.73" fill="#0f67d3" />
