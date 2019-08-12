@@ -97,7 +97,7 @@ const SliderMenu = props => {
       <StyledLink
         id="home"
         className="menu-item"
-        to="#"
+        to="/"
         style={{
           textDecoration: "none",
           color: checkLocation("home", location) ? "#29a25d" : "#ffffff",
@@ -140,8 +140,13 @@ const SliderMenu = props => {
       <StyledLink
         id="home"
         className="menu-item"
-        to="#"
-        style={{ textDecoration: "none" }}
+        to="/how-it-works"
+        style={{
+          textDecoration: "none",
+          color: checkLocation("/how-it-works", location)
+            ? "#29a25d"
+            : "#ffffff",
+        }}
       >
         <FaCogs />
         How It Works

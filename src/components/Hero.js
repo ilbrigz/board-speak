@@ -82,6 +82,10 @@ const Hero = React.memo(
       event.preventDefault()
 
       if (!inputRef.current.value) {
+        setMsg({
+          type: "ERR",
+          msg: "Please enter your email in the input field.",
+        })
         return
       }
       const emailValid = validateEmail(inputRef.current.value)
