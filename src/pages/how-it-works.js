@@ -15,11 +15,18 @@ const Card = styled.div`
   position: relative;
 
   align-items: center;
+  @media (max-width: 440px) {
+    flex-direction: column;
+  }
   h3 {
     color: #ffffff;
     text-align: center;
     min-width: 40%;
     margin-right: 1rem;
+    @media (max-width: 440px) {
+      margin-right: 0;
+      min-width: 100%;
+    }
   }
 `
 const Cards = styled.div`
