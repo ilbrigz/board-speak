@@ -22,6 +22,10 @@ const Card = styled.div`
   @media (max-width: 440px) {
     flex-direction: column;
   }
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
   h3 {
     color: #ffffff;
     text-align: center;
