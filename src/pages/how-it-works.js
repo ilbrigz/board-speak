@@ -23,6 +23,7 @@ const Card = styled.div`
     flex-direction: column;
   }
   p {
+    color: rgb(92, 92, 94);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
@@ -90,6 +91,7 @@ const HowItWorks = props => {
             style={{
               paddingTop: "8rem",
               fontSize: "2rem",
+              color: "rgb(92, 92, 94)",
             }}
           >
             How it Works
