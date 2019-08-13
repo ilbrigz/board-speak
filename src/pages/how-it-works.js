@@ -10,7 +10,7 @@ import { FaShieldAlt, FaAddressBook, FaTasks, FaSitemap } from "react-icons/fa"
 import { MdEventAvailable } from "react-icons/md"
 
 const Card = styled.div`
-  background-color: #8ccda8;
+  background-color: rgb(41, 162, 93);
   display: flex;
   align-items: flex-start;
   padding: 1rem;
@@ -23,7 +23,8 @@ const Card = styled.div`
     flex-direction: column;
   }
   p {
-    color: rgb(92, 92, 94);
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
