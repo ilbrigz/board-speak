@@ -84,7 +84,6 @@ const SubMenu = styled.div`
 const SliderMenu = props => {
   const [expanded, setExpanded] = useState(false)
   useEffect(() => {
-    console.log(expanded)
     if (props.offsetY < -60 && expanded === false) {
       setExpanded(true)
     } else if (props.offsetY >= -60 && expanded === true) {
