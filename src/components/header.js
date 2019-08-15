@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import styled, { css } from "styled-components"
 import logo from "../images/logo.png"
+
 const Button = styled.button`
   background-color: #29a25d;
   margin-left: auto;
@@ -62,7 +63,7 @@ const StyledImg = styled.img`
   //   display: none;
   // }
 `
-const Header = ({ offsetY, inputRef }) => {
+const Header = ({ offsetY, inputRef, history }) => {
   const [expand, setExpand] = useState(false)
   useEffect(() => {
     if (offsetY < -60) {
@@ -72,8 +73,13 @@ const Header = ({ offsetY, inputRef }) => {
     }
   }, [offsetY])
   const focusInput = () => {
+    if (!inputRef) {
+      navigate("/")
+      return
+    }
     inputRef.current.focus()
   }
+  console.log(history)
   return (
     <SHeader expanded={expand}>
       <div>

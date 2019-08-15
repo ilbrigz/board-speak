@@ -95,7 +95,6 @@ const ContentWrapper = styled.div`
 `
 // const Styled
 const Item = memo(({ data, index }) => {
-  console.log(data)
   return (
     <StyledItem isEven={index % 2 == 0}>
       <SvgWrapper isEven={index % 2 == 0}>

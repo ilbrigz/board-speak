@@ -152,11 +152,11 @@ const HowItWorks = memo(props => {
               marginBottom: "4rem",
             }}
           >
-            How it Works
+            How It Works
           </h2>
           <Cards>
             {data.map((item, indx) => (
-              <Item data={item} index={indx} />
+              <Item key={indx} data={item} index={indx} />
             ))}
           </Cards>
         </Layout>
